@@ -1,5 +1,5 @@
 
-
+var acceuil = true
 
 function cssCanvas(){
    
@@ -16,13 +16,23 @@ function cssCanvas(){
         
         });
 
+        $('#canvasb').css({
+   
+          'z-index': '1' ,
+            
+            
+          
+          });
+
+
+       
 }
 
 
 
 cssCanvas()
 
-var X 
+var X
 var Y 
 
 var xca 
@@ -92,19 +102,51 @@ draw()
 
 //dlevreAnimations()
  
-var mess 
+ 
 animationPage() 
 function  animationPage() {
-  mess =   setInterval( function() {
+   mess =   setInterval( function() {
+    dlevreAnimations()
+     
+     if(xca <= (13.6*X)/100){
+      xca  = (85.5*X)/100
+      
+      
+        
+        if(acceuil==false){
+           clearInterval(mess)
+
+             $('#canvasb').css({
+           'display': 'none',
+                });
+        }
+       
+      }
+      
+
+      }, 50);
+}
+
+
+function  tournePage() {
+  $('#canvasb').css({
+    'display': 'block',
+    'z-index': '3' ,
+         });
+        
+         xca  = (85.5*X)/100
+var  tourn =   setInterval( function() {
     dlevreAnimations()
      if(xca <= (13.6*X)/100){
-       // clearInterval(mess)
-  
-      // alert('animation termine')
      
+      clearInterval(tourn)
+        $('#canvasb').css({
+          'display': 'none',
+          'z-index': '3' ,
+              });
         xca  = (85.5*X)/100
       }
-      }, 200);
+      }, 50);
 }
 
 
