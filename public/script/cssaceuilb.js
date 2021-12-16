@@ -5,6 +5,7 @@ $('#menupng').css({
   
     'position': 'absolute',
     'top': '20%',
+  'left': '0%',
     'width': '26%',
     'heigth': '35%',
     
