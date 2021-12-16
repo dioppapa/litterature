@@ -1,3 +1,11 @@
+
+var mess
+
+var a = $(window).width()
+
+var b = $(window).width()
+
+ 
 entrer()
 
 createReseau()
@@ -6,7 +14,13 @@ hoverReseau()
 cssReseau()
 
 
+cssmenu()
+curenntcssitem(0)
+csshovermenu()
 
+menuClick()
+
+contoloeuvre()
 function clickReseau(){
 
 
@@ -141,13 +155,10 @@ function clickReseau(){
             $("#reseau").css({
                   'width': '30px',
                   'position': 'fixed',
-                  'top':'50%',
+                  'top':'38%',
                   'right':'0%',
                 'padding':'1%',
-                
-                
-              
-              'background':'rgba(0,0,0,0.3)',
+               'background':'rgba(0,0,0,0.3)',
               
               
               
@@ -210,11 +221,9 @@ $('body').css({
   
     
   });
-  var  X = $(window).width() 
-   var Y = $(window).height()
   
-  $('body').width( X* (98/100))
-  $('body').height(Y * (97/100))
+  $('body').width( a* (98/100))
+  $('body').height(b * (97/100))
   
   
     
@@ -225,8 +234,8 @@ $('body').css({
       var tl  = tt.length
       animeMessage()
   
-   $('#acceuilbas').width( X* (98/100))
-  $('#acceuilbas').height(Y * (97/100))
+   $('#acceuilbas').width( a* (98/100))
+  $('#acceuilbas').height(b * (97/100))
   
   /** 
   $('#acceuilbas').css({
@@ -246,8 +255,6 @@ $('body').css({
    
   });
   $('#messagebienvenu').css({
-  
-    
   
     'font-weight': 'bold',
     'font-size': '25px',
@@ -302,7 +309,7 @@ $('body').css({
     
   });
   
-  
+
   function animeMessage() {
          
          var mess =   setInterval( function() {
@@ -324,12 +331,42 @@ $('body').css({
      
         }
 
+
+        function menuClick(){
+          $('.classdivm').click(function(){
+            var i =   $(this).index()
+
+            $('.classflech').css({
+              'display': 'none',
+              });
+
+            $('.classflech').eq(i).css({
+              'display': 'block',
+              });
+
+              $('.contenu').css({
+                'display': 'none',
+                });
+  
+              $('.contenu').eq(i).css({
+                'display': 'block',
+                });
+
+              tournePage()
+
+                  });
+      }
+
+
+
+
         function entrer(){
             $('#porte').click(function(){
                 $('#acceuil').css({
                   'display': 'none',
                        });
                        showAcceuil()
+                       acceuil = false
                     });
         }
 
@@ -339,3 +376,12 @@ $('body').css({
                 'display': 'block',
                 });
         }
+
+
+        function contoloeuvre(){
+          $('.contoloeuvre').click(function(){
+            alert('cliqued')
+                });
+      }
+
+        
